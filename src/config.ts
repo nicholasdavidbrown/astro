@@ -3,24 +3,24 @@ import type { SocialObjects } from "./types";
 export const SITE = {
   website: "https://astro-paper.pages.dev/",
   author: "Sat Naing",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "AstroPaper",
+  desc: "A blog site for random (mostly tech related) articles. Hopefully they help somebody out the on the interwebs.",
+  title: "ndb",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
-  postPerPage: 3,
+  postPerPage: 5,
 };
 
 export const LOGO_IMAGE = {
   enable: false,
   svg: true,
-  width: 216,
-  height: 46,
+  width: 100,
+  height: 40,
 };
 
 export const SOCIALS: SocialObjects = [
   {
     name: "Github",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://github.com/nicholasdavidbrown",
     linkTitle: ` ${SITE.title} on Github`,
     active: true,
   },
@@ -28,17 +28,17 @@ export const SOCIALS: SocialObjects = [
     name: "Facebook",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Facebook`,
-    active: true,
+    active: false,
   },
   {
     name: "Instagram",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Instagram`,
-    active: true,
+    active: false,
   },
   {
     name: "LinkedIn",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://www.linkedin.com/in/ndb23/",
     linkTitle: `${SITE.title} on LinkedIn`,
     active: true,
   },

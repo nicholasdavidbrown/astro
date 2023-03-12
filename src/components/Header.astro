@@ -6,9 +6,24 @@ import LinkButton from "./LinkButton.astro";
 import logoPNG from "/assets/logo.png";
 import logoSVG from "/assets/logo.svg";
 
+import logo from "/assets/logo2.svg";
+
+const logoWidth = LOGO_IMAGE.width;
+const logoHeight = LOGO_IMAGE.width;
+
 export interface Props {
   activeNav?: "posts" | "tags" | "about" | "search";
 }
+
+/**
+ * Randomly generate colours
+ */
+function randColour() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+const colour1 = randColour();
+const colour2 = randColour();
+const colour3 = randColour();
 
 const { activeNav } = Astro.props;
 ---
@@ -18,7 +33,7 @@ const { activeNav } = Astro.props;
   <div class="nav-container">
     <div class="top-nav-wrap">
       <a href="/" class="logo">
-        {
+        <!-- {
           LOGO_IMAGE.enable ? (
             <img
               src={LOGO_IMAGE.svg ? logoSVG : logoPNG}
@@ -29,7 +44,39 @@ const { activeNav } = Astro.props;
           ) : (
             SITE.title
           )
-        }
+        } -->
+        <svg
+          id="logo-svg"
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 226.28 86.15"
+          style={`width: ${logoWidth}; height: ${logoHeight}; textAlign: left;`}
+        >
+          <path
+            class="logo-n"
+            d="m0,0v86.15l22.84-18.16h45.15V0H0Zm50.88,53.78c0,.5-.43.93-.93.93h-10.91c-.5,0-.93-.43-.87-.93v-18.54c0-2.48-1.12-3.91-3.04-3.91-3.53,0-4.09,3.47-4.09,3.47v18.97c0,.5-.43.93-.93.93h-10.91c-.5,0-.93-.43-.93-.93V21.48c0-.56.31-.87.87-.87h6.94c.43,0,.81.19.99.62l.81,1.98c1.98-2.17,6.2-3.47,9.98-3.47,8.43,0,13.02,3.91,13.02,13.58v20.46Z"
+          ></path>
+          <g>
+            <path
+              class="logo-d"
+              d="m112.06,30.41c-3.41,0-5.7,2.85-5.7,7.19s2.29,7.44,5.7,7.44c2.17,0,4.15-1.36,4.9-3.41v-7.81c-.74-2.05-2.73-3.41-4.9-3.41Z"
+            ></path>
+            <path
+              class="logo-d"
+              d="m79.15,0v86.15l22.84-18.16h45.15V0h-67.99Zm50.58,53.78c0,.5-.43.93-.93.93h-7.01c-.43,0-.74-.37-.99-.93l-.93-2.23c-2.36,2.48-6.32,4.09-10.48,4.09-9.8,0-16.37-7.19-16.37-17.98s6.57-17.92,16.37-17.92c2.91,0,5.7.87,7.56,2.36v-11.47c0-.43.43-.87.93-.87h10.91c.5,0,.93.43.93.87v43.15Z"
+            ></path>
+          </g>
+          <g>
+            <path
+              class="logo-b"
+              d="m193.46,30.41c-2.17,0-4.15,1.36-4.9,3.41v7.81c.74,2.05,2.73,3.41,4.9,3.41,3.41,0,5.7-2.98,5.7-7.44s-2.29-7.19-5.7-7.19Z"
+            ></path>
+            <path
+              class="logo-b"
+              d="m158.29,0v86.15l22.84-18.16h45.15V0h-67.99Zm37.83,55.64c-4.15,0-8.12-1.61-10.48-4.09l-.93,2.23c-.25.56-.56.93-.99.93h-7c-.5,0-.93-.43-.93-.93V10.63c0-.43.43-.87.93-.87h10.91c.5,0,.93.43.93.87v11.47c1.86-1.49,4.65-2.36,7.56-2.36,9.8,0,16.37,7.19,16.37,17.92s-6.57,17.98-16.37,17.98Z"
+            ></path>
+          </g>
+        </svg>
       </a>
       <nav id="nav-menu">
         <button
@@ -105,7 +152,19 @@ const { activeNav } = Astro.props;
   <Hr />
 </header>
 
-<style>
+<style define:vars={{ colour1, colour2, colour3 }}>
+  .logo-n {
+    fill: var(--colour1);
+  }
+
+  .logo-d {
+    fill: var(--colour2);
+  }
+
+  .logo-b {
+    fill: var(--colour3);
+  }
+
   #skip-to-content {
     @apply absolute -top-full left-16 z-50 bg-skin-accent py-2 px-3 text-skin-inverted transition-all focus:top-4;
   }

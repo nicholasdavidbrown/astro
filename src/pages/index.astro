@@ -23,7 +23,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   <Header />
   <main id="main-content">
     <section id="hero">
-      <h1>Mingalaba</h1>
+      <h1>G'day</h1>
       <a
         target="_blank"
         href="/rss.xml"
@@ -41,19 +41,24 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       </a>
 
       <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
+        I'm Nick Brown. I'm a software engineer and I love (trying) to keep up
+        with new tech. I enjoy writing and would like to do more of it outside
+        of working hours... So, here I go on a blog site. 🚀
       </p>
       <p>
-        Read the blog posts or check
-        <LinkButton
+        This site was bootstrapped with <LinkButton
           className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
-          href="https://github.com/satnaing/astro-paper#readme"
+          href="https://docs.astro.build/en/getting-started/"
         >
-          README
-        </LinkButton> for more info.
+          Astro
+        </LinkButton> and this blog uses a minimal, responsive, accessible and SEO-friendly
+        Astro blog theme by <strong><i>satnaing</i></strong> called <LinkButton
+          className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
+          href="https://github.com/satnaing/astro-paper"
+        >
+          "astro-paper"
+        </LinkButton>. I have started to use Astro as my default MPA (multi-page
+        application) framework plugged in with React TypeScript components.
       </p>
       {
         // only display if at least one social link is enabled
